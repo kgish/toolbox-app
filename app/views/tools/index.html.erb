@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Icon</th>
       <th>Color</th>
       <th>Title</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @tools.each do |tool| %>
       <tr>
+        <td><%= tool.name %></td>
         <td><%= tool.icon %></td>
         <td><%= tool.color %></td>
         <td><%= tool.title %></td>

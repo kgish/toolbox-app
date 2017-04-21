@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170421211815) do
   enable_extension "plpgsql"
 
   create_table "tools", force: :cascade do |t|
+    t.string   "name"
     t.string   "icon"
     t.string   "color"
     t.string   "title"
