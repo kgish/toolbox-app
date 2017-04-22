@@ -1,6 +1,6 @@
 set :application, "toolbox-app"
 set :repo_url, "git@github.com:kgish/toolbox-app.git"
-set :deploy_to, '/home/deploy/toolbox-app'
+set :deploy_to, '/home/deploy/toolbox-app/current'
 
 set :rvm_ruby_version, '2.4.0'
 
