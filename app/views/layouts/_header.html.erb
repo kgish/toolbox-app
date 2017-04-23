@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Toolbox-App</a>
+      <a class="navbar-brand" href="#">Participation-Tools</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -20,7 +20,7 @@
 
       <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  <strong><%= fa_icon 'user' %> <%= current_user.email %></strong> | <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <strong><%= fa_icon current_user.admin? ? 'user-plus' : 'user' %> <%= current_user.username %></strong> | <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
   <%= fa_icon 'lock' %>
 <% end %>

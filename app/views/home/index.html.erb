@@ -1,31 +1,20 @@
-<h1><%= fa_icon 'quote-left' %> Toolbox-App <%= fa_icon 'quote-right'%></h1>
-
-<p class="lead">Open source participation tools for your daily needs.</p>
-
-<hr />
+<div class="main-heading">
+  <h1><%= fa_icon 'quote-left' %> Participation Tools <%= fa_icon 'quote-right'%></h1>
+  <p class="lead">Open source participation tools for all your daily needs.</p>
+</div>
 
 <div class="row">
-  <div class="col-sm-3">
-    <%= link_to 'home', class: 'no-underline' do %>
-        <div class="card">
-          <span class="card-img-top palette-1"><%= fa_icon 'rocket', class: 'fa-5x' %></span>
-          <div class="card-block">
-            <h3 class="card-title">Rocket</h3>
-            <p class="card-text">We are ready for blast off</p>
+  <% @tools.each do |tool| %>
+    <div class="col-sm-3">
+      <%= link_to '/', class: 'no-underline' do %>
+          <div class="card">
+            <span class="card-img-top palette-<%= tool.color %>"><%= fa_icon tool.icon, class: 'fa-5x' %></span>
+            <div class="card-block">
+              <h3 class="card-title"><%= tool.title %></h3>
+              <p class="card-text"><%= tool.text %></p>
+            </div>
           </div>
-        </div>
-    <% end %>
-
-  </div>
-  <div class="col-sm-3">
-    <%= link_to 'home', class: 'no-underline' do %>
-        <div class="card">
-          <span class="card-img-top palette-2"><%= fa_icon 'heart', class: 'fa-5x' %></span>
-          <div class="card-block">
-            <h3 class="card-title">Health</h3>
-            <p class="card-text">Mentally and physically well</p>
-          </div>
-        </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

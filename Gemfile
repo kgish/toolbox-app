@@ -32,6 +32,8 @@ gem 'devise'
 # gem 'will_paginate', '~> 3.0.6'
 # gem 'will_paginate-bootstrap'
 
+gem 'faker'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
@@ -52,5 +54,4 @@ group :development do
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
     gem 'capistrano3-puma',   require: false
-
 end
