@@ -1,3 +1,8 @@
 class Tool < ApplicationRecord
-  validate :name, :icon, :color, :title, :text, :content, presence: true
+  validates :name, presence: true
+  validates :icon, presence: true
+  validates :color, presence: true
+  validates :title, presence: true
+  validates :text, presence: true
+  validates :content, presence: true
 end
