@@ -18,12 +18,24 @@
         <li class="<%= active_class(contact_path) %>"><%= link_to 'Contact', contact_path %></li>
       </ul>
 
+
       <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  <strong><%= fa_icon current_user.admin? ? 'user-plus' : 'user' %> <%= current_user.username %></strong> | <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= fa_icon 'lock' %>
-<% end %>
+        <% if user_signed_in? %>
+          <strong><%= fa_icon current_user.admin? ? 'user-plus' : 'user' %> <%= current_user.username %></strong> | <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= fa_icon 'lock' %>
+        <% end %>
+      </p>
+
+      <% if user_signed_in? %>
+          <ul class="nav navbar-nav pull-right">
+            <% if current_user.admin? %>
+                <li class="<%= active_class(dashboard_path) %>"><%= link_to 'Dashboard', dashboard_path %></li>
+            <% else %>
+                <li class="<%= active_class(root_path) %>"><%= link_to 'Dummy', root_path %></li>
+            <% end %>
+          </ul>
+      <% end %>
 
     </div>
   </div>
