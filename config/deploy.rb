@@ -77,6 +77,19 @@ namespace :deploy do
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
+
+  task :rake do
+    desc 'Execute rake task: cap production deploy:rake task=db:seed'
+    puts "\n=== Executing rake task #{ENV['task']} ===\n"
+    on primary :db do
+      within current_path do
+        with rails_env: fetch(:stage) do
+          execute :rake, ENV['task']
+        end
+      end
+    end
+  end
+
 end
 
 # ps aux | grep puma    # Get puma pid
