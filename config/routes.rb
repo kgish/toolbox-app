@@ -4,7 +4,15 @@ Rails.application.routes.draw do
   resources :tools
   root to: "home#index"
 
+  namespace :admin do
+    resources :users, :tools
+    get '/dashboard/home' => 'dashboard#home'
+    get '/dashboard/globals' => 'dashboard#globals'
+    get '/dashboard/themes' => 'dashboard#themes'
+    get '/dashboard/users' => 'dashboard#users'
+    get '/dashboard/tools' => 'dashboard#tools'
+  end
+
   get '/about' => 'about#index'
   get '/contact' => 'contact#index'
-  get '/dashboard' => 'dashboard#index'
 end

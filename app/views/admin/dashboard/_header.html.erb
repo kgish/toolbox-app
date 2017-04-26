@@ -1,0 +1,28 @@
+<div class="main-heading">
+  <h1><%= fa_icon 'dashboard' %> Dashboard</h1>
+  <p class="lead">As administrator you have unlimited powers, so be very careful!</p>
+</div>
+
+<div class="main-content">
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <%= link_to 'Home', admin_dashboard_home_path, class: "nav-link " +  active_class(admin_dashboard_home_path) %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Globals', admin_dashboard_globals_path, class: "nav-link " +  active_class(admin_dashboard_globals_path) %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Themes', admin_dashboard_themes_path, class: "nav-link " +  active_class(admin_dashboard_themes_path) %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Users', admin_dashboard_users_path, class: "nav-link " +  active_class(admin_dashboard_users_path) %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Tools', admin_dashboard_tools_path, class: "nav-link " +  active_class(admin_dashboard_tools_path) %>
+    </li>
+  </ul>
+
+  <%= yield %>
+
+</div>
