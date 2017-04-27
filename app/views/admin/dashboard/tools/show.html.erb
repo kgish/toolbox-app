@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-3">
+    <%= link_to '#', class: 'no-underline' do %>
+        <div class="card">
+          <span class="card-img-top palette-<%= @tool.color %>"><%= fa_icon @tool.icon, class: 'fa-5x' %></span>
+          <div class="card-block">
+            <h3 class="card-title"><%= @tool.title %></h3>
+            <p class="card-text"><%= @tool.text %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<p>
+  <strong>Content:</strong>
+  <%= @tool.content %>
+</p>
+
+<%= link_to 'Edit', edit_admin_dashboard_tool_path(@tool), class: "btn btn-success" %>
+<%= link_to 'Back', admin_dashboard_tools_path, class: "btn btn-default" %>

@@ -1,4 +1,4 @@
-class ToolsController < ApplicationController
+class Admin::Dashboard::ToolsController < Admin::BaseController
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   # GET /tools
@@ -69,6 +69,6 @@ class ToolsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tool_params
-      params.require(:tool).permit(:icon, :color, :title, :text)
+      params.require(:tool).permit(:icon, :color, :title, :text, :content)
     end
 end
