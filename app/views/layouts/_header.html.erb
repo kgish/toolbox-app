@@ -30,8 +30,8 @@
       <% if user_signed_in? %>
           <ul class="nav navbar-nav pull-right">
             <% if current_user.admin? %>
-                <li class="<%= active_class(admin_dashboard_globals_path) %>">
-                  <%= link_to admin_dashboard_globals_path do %>
+                <li class="<%= active_class(admin_dashboard_users_path) %>">
+                  <%= link_to admin_dashboard_users_path do %>
                     <%= fa_icon 'dashboard' %> Dashboard
                   <% end %>
                 </li>

@@ -22,6 +22,16 @@ User.create!(
   admin: true
 )
 
+User.create!(
+  email: 'demo@socioneers.com',
+  password: 'demo123',
+  username: 'demo',
+  firstname: 'Day',
+  lastname: 'Mo',
+  company: 'Socioneers',
+  admin: false
+)
+
 Tool.delete_all
 
 [
