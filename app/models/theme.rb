@@ -1,3 +1,3 @@
-class Admin::Dashboard::Theme < ApplicationRecord
-  validates :name, presence: true
+class Theme < ApplicationRecord
+  validates :name, presence: true, uniqueness: true
 end

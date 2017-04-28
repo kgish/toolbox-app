@@ -4,7 +4,7 @@ User.delete_all
 
 User.create!(
   email: 'kiffin.gish@planet.nl',
-  password: 'adm1n-t00lb0x-01',
+  password: 'kiffin',
   username: 'kiffin',
   firstname: 'Kiffin',
   lastname: 'Gish',
@@ -105,3 +105,16 @@ Tool.delete_all
     content: Faker::Lorem.paragraph
   )
 end
+
+Theme.delete_all
+
+Theme.create!(
+       name: 'socioneers'
+)
+
+Global.delete_all
+
+Global.create!(
+    key: 'app_name',
+    value: 'Participation-tools'
+)

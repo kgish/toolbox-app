@@ -3,15 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
-  namespace :admin do
-    namespace :dashboard do
-      resources :tools
-      resources :users
-      resources :globals
-      resources :themes
-    end
-  end
+  resources :tools
+  resources :users
+  resources :globals
+  resources :themes
 
+  get '/admin' => 'admin#index'
   get '/about' => 'about#index'
   get '/contact' => 'contact#index'
 end

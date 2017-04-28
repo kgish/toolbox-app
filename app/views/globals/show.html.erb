@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @global.key %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @global.value %>
+</p>
+
+<%= link_to 'Edit', edit_global_path(@global) %> |
+<%= link_to 'Back', globals_path %>

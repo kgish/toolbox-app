@@ -1,5 +1,5 @@
 class Tool < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :icon, presence: true
   validates :color, presence: true
   validates :title, presence: true
