@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   # Force user to redirect to login page if the user was not logged in
   before_action :authenticate_user!
+
+  def record_not_found
+    flash[:error] = '404 Record Not Found'
+    redirect_to root_path
+  end
 
   def after_sign_in_path_for(resource)
     stored_location_for(resource) ||
