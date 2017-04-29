@@ -125,3 +125,9 @@ a.no-underline {
 a.nounderline {
     text-decoration: none;
 }
+
+.bootsy textarea,
+.bootsy iframe {
+  background-color: whitesmoke;
+  height: 500px !important;
+}

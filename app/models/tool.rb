@@ -1,4 +1,6 @@
 class Tool < ApplicationRecord
+  include Bootsy::Container
+
   validates :name, presence: true, uniqueness: true
   validates :icon, presence: true
   validates :color, presence: true

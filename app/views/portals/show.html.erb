@@ -4,4 +4,4 @@
   <p class="lead"><%= @tool.text %></p>
 </div>
 
-<div class="main-content"><%= @tool.content %></div>
+<div class="main-content"><%= sanitize(@tool.content) %></div>

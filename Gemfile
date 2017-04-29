@@ -34,6 +34,8 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'bootsy'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'

@@ -1,34 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tool.name %>
-</p>
+<div class="row">
+    <div class="col-sm-3">
+      <%= link_to portal_path(@tool.name), class: 'no-underline' do %>
+          <div class="card">
+            <span class="card-img-top palette-<%= @tool.color %>"><%= fa_icon @tool.icon, class: 'fa-5x' %></span>
+            <div class="card-block">
+              <h3 class="card-title"><%= @tool.title %></h3>
+              <p class="card-text"><%= @tool.text %></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+</div>
+
+<hr/>
 
 <p>
-  <strong>Icon:</strong>
-  <%= @tool.icon %>
+  <strong>Content:</strong><br/>
 </p>
+<div class="main-content"><%= sanitize(@tool.content) %></div>
 
-<p>
-  <strong>Color:</strong>
-  <%= @tool.color %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @tool.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @tool.text %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @tool.content %>
-</p>
+<hr/>
 
 <%= link_to 'Edit', edit_tool_path(@tool) %> |
 <%= link_to 'Back', tools_path %>
