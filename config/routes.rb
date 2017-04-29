@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   resources :globals
   resources :themes
 
-  get '/admin' => 'admin#index'
   get '/about' => 'about#index'
   get '/contact' => 'contact#index'
 end
