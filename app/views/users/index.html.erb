@@ -27,8 +27,10 @@
           <td><%= link_to 'Show', user %></td>
           <td><%= link_to 'Edit', edit_user_path(user) %></td>
           <td class="textalign-right">
-            <%= link_to user, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } do %>
-                <%= fa_icon 'trash-o', class: 'fa-lg' %> Delete
+            <% unless user.id == current_user.id || user.username == 'kiffin' %>
+              <%= link_to user, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } do %>
+                  <%= fa_icon 'trash-o', class: 'fa-lg' %> Delete
+              <% end %>
             <% end %>
           </td>
         </tr>
