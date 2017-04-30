@@ -1,9 +1,6 @@
-<div class="main-heading">
-  <h1><%= fa_icon 'quote-left' %> Home <%= fa_icon 'quote-right'%></h1>
-  <p class="lead">As administrator you have unlimited powers, so use them carefully!</p>
-</div>
+<%= render partial: 'shared/heading', :locals => {:h1 => 'Home', :p => 'As administrator you have unlimited powers, so use them carefully'} %>
 
-<div class="main-content textalign-center">
+<div class="row main-content textalign-center">
   <%= link_to 'Users', users_path, class: 'btn btn-success' %>&nbsp;
   <%= link_to 'Tools', tools_path, class: 'btn btn-success' %>&nbsp;
   <%= link_to 'Themes', themes_path, class: 'btn btn-success' %>&nbsp;

@@ -1,28 +1,29 @@
-<div class="main-heading">
-  <h1><%= fa_icon 'quote-left' %> Themes <%= fa_icon 'quote-right'%></h1>
-  <p class="lead">Skinnable styling to be applied to the whole application.</p>
+<%= render partial: 'shared/heading', :locals => {:h1 => 'Themes', :p => 'Skinnable house stule to be applied across the whole application' } %>
+
+<div class="row main-content">
+
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3" class="textalign-right"><%= link_to 'New Theme', new_theme_path, class: 'btn btn-success' %></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @themes.each do |theme| %>
+        <tr>
+          <td><%= theme.name %></td>
+          <td><%= link_to 'Show', theme %></td>
+          <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
+          <td>
+            <%= link_to theme, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
+                <%= fa_icon 'trash' %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
 </div>
-
-<table class="table table-striped table-bordered">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th colspan="3" class="textalign-right"><%= link_to 'New Theme', new_theme_path, class: 'btn btn-success' %></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @themes.each do |theme| %>
-      <tr>
-        <td><%= theme.name %></td>
-        <td><%= link_to 'Show', theme %></td>
-        <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-        <td>
-          <%= link_to theme, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
-              <%= fa_icon 'trash' %>
-          <% end %>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>

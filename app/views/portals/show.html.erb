@@ -1,7 +1,5 @@
-<div class="main-heading">
-  <span class="card-img-top palette-<%= @tool.color %>"><%= fa_icon @tool.icon, class: 'fa-5x' %></span>
-  <h1><%= @tool.title %></h1>
-  <p class="lead"><%= @tool.text %></p>
-</div>
+<%= render partial: 'shared/heading', :locals => {:h1 => 'Participation Tools', :p => 'Open source participation tools for all your daily needs', :icon => { :color => @tool.color, :name => @tool.icon } } %>
 
-<div class="main-content"><%= sanitize(@tool.content) %></div>
+<div class="row main-content">
+  <%= sanitize(@tool.content) %>
+</div>

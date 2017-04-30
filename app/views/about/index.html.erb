@@ -1,7 +1,38 @@
-<div class="main-heading">
-  <h1><%= fa_icon 'quote-left' %> About <%= fa_icon 'quote-right'%></h1>
-  <p class="lead">Some extra information explaining who we are and what we can do for you.</p>
-</div>
+<%= render partial: 'shared/heading', :locals => {:h1 => 'About', :p => 'Some extra information explaining who we are and what we can do for you'} %>
 
-<div class="main-content">Content goes here ...</div>
+<div class="row main-content about">
+
+  <%= image_tag "socioneers-logo.svg", class: 'medium-logo' %>
+
+  <h2>Powerful online tools for communities</h2>
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= fa_icon 'share-alt', class: 'fa-3x palette-8' %>
+    </div>
+    <div class="col-md-8">
+      Here at Socioneers we work with organisations and communities to create <strong>ONLINE PLATFORMS</strong>. This way we facilitate and strengthen <strong>COMMUNITY PARTICIPATION</strong>.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= fa_icon 'flask', class: 'fa-3x palette-9' %>
+    </div>
+    <div class="col-md-8">
+      We specialise in online <strong>COMMUNITY-BUILDING</strong> and <strong>DECISION-MAKING</strong>. Our team offers facilitation, technical development and user experience design.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= fa_icon 'key', class: 'fa-3x palette-10' %>
+    </div>
+    <div class="col-md-8">
+      By involving all <strong>STAKEHOLDERS</strong>, we ensure that target groups are empowered to participate and take individual and collective <strong>ACTION</strong>.
+    </div>
+  </div>
+
+
+</div>
 

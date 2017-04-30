@@ -25,6 +25,25 @@ footer {
   margin-bottom: 20px;
 }
 
+.main-content {
+  padding: 10px 25px;
+  .about {
+    .row {
+      margin-top: 15px;
+    }
+  }
+}
+
+.main-content.about {
+  .row {
+    margin-top: 25px;
+  }
+}
+
+.medium-logo {
+  height: 100px;
+}
+
 /* Flash messages
 -------------------------------------------------- */
 .alert-error {

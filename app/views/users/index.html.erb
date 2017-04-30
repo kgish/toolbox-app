@@ -1,34 +1,35 @@
-<div class="main-heading">
-  <h1><%= fa_icon 'quote-left' %> Users <%= fa_icon 'quote-right'%></h1>
-  <p class="lead">List of accounts for admins and regular users.</p>
-</div>
+<%= render partial: 'shared/heading', :locals => {:h1 => 'Users', :p => 'List of user accounts for admins and regular folks' } %>
 
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Company</th>
-      <th>Admin</th>
-      <th colspan="3" class="textalign-right"><%= link_to 'New User', new_user_path, class: 'btn btn-success' %></th>
-    </tr>
-  </thead>
+<div class="row main-content">
 
-  <tbody>
-    <% @users.each do |user| %>
+  <table class="table table-striped table-bordered">
+    <thead>
       <tr>
-        <td><%= user.firstname %> <%= user.lastname %></td>
-        <td><%= user.email %></td>
-        <td><%= user.company %></td>
-        <td><%= user.admin? %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td>
-          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <%= fa_icon 'trash' %>
-          <% end %>
-        </td>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>Admin</th>
+        <th colspan="3" class="textalign-right"><%= link_to 'New User', new_user_path, class: 'btn btn-success' %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.firstname %> <%= user.lastname %></td>
+          <td><%= user.email %></td>
+          <td><%= user.company %></td>
+          <td><%= user.admin? %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td>
+            <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <%= fa_icon 'trash' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
