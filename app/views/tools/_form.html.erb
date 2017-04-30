@@ -11,6 +11,9 @@
 
   <div class="form-inputs">
     <%= f.input :color %>
+    <% 20.times do |i| %>
+      <%= i %>-<%= fa_icon 'square', class: "palette-#{i}", title: "#{i}" %>
+    <% end %>
   </div>
 
   <div class="form-inputs">
