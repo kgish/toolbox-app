@@ -7,7 +7,11 @@
     <tr>
       <th>Key</th>
       <th>Value</th>
-      <th colspan="3" class="textalign-right"><%= link_to 'New Global', new_global_path, class: 'btn btn-success' %></th>
+      <th colspan="3" class="textalign-right">
+        <%= link_to new_global_path, class: 'btn btn-success' do %>
+            <%= fa_icon 'check-square-o', class: 'fa-lg' %> New Global
+        <% end %>
+      </th>
     </tr>
     </thead>
 
@@ -18,9 +22,9 @@
           <td><%= global.value %></td>
           <td><%= link_to 'Show', global %></td>
           <td><%= link_to 'Edit', edit_global_path(global) %></td>
-          <td>
-            <%= link_to global, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
-                <%= fa_icon 'trash' %>
+          <td class="textalign-right">
+            <%= link_to global, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } do %>
+                <%= fa_icon 'trash-o', class: 'fa-lg' %> Delete
             <% end %>
           </td>
         </tr>

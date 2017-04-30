@@ -8,7 +8,11 @@
         <th class="textalign-center">Icon</th>
         <th>Name</th>
         <th>Title</th>
-        <th colspan="3" class="textalign-right"><%= link_to 'New Tool', new_tool_path, class: 'btn btn-success' %></th>
+        <th colspan="3" class="textalign-right">
+          <%= link_to new_tool_path, class: 'btn btn-success' do %>
+              <%= fa_icon 'check-square-o', class: 'fa-lg' %> New Tool
+          <% end %>
+        </th>
       </tr>
     </thead>
 
@@ -20,9 +24,9 @@
           <td><%= tool.title %></td>
           <td><%= link_to 'Show', tool %></td>
           <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
-          <td>
-            <%= link_to tool, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
-                <%= fa_icon 'trash' %>
+          <td class="textalign-right">
+            <%= link_to tool, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } do %>
+                <%= fa_icon 'trash-o', class: 'fa-lg' %> Delete
             <% end %>
           </td>
         </tr>

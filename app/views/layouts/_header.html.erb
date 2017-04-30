@@ -24,13 +24,33 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= fa_icon current_user.admin? ? 'user-plus' : 'user' %> &nbsp; <%= current_user.firstname %> <%= current_user.lastname %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
-                <li><%= link_to "Users", users_path %></li>
-                <li><%= link_to "Tools", tools_path %></li>
-                <li><%= link_to "Themes", themes_path %></li>
-                <li><%= link_to "Globals", globals_path %></li>
+                <li>
+                  <%= link_to users_path do %>
+                    <%= fa_icon 'users', class: 'fa-fw' %> &nbsp; Users
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to tools_path do %>
+                      <%= fa_icon 'wrench', class: 'fa-fw' %> &nbsp; Tools
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to themes_path do %>
+                      <%= fa_icon 'cubes', class: 'fa-fw' %> &nbsp; Themes
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to globals_path do %>
+                      <%= fa_icon 'globe', class: 'fa-fw' %> &nbsp; Globals
+                  <% end %>
+                </li>
                 <li role="separator" class="divider"></li>
               <% end %>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <%= fa_icon 'sign-out', class: 'fa-fw' %> &nbsp; Logout
+                  <% end %>
+                </li>
             </ul>
           </li>
         </ul>

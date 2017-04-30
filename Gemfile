@@ -33,7 +33,6 @@ gem 'devise'
 # gem 'will_paginate-bootstrap'
 
 gem 'faker'
-
 gem 'bootsy'
 
 group :development, :test do

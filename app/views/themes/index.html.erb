@@ -6,7 +6,11 @@
     <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3" class="textalign-right"><%= link_to 'New Theme', new_theme_path, class: 'btn btn-success' %></th>
+      <th colspan="3" class="textalign-right">
+        <%= link_to new_theme_path, class: 'btn btn-success' do %>
+            <%= fa_icon 'check-square-o', class: 'fa-lg' %> New Theme
+        <% end %>
+      </th>
     </tr>
     </thead>
 
@@ -16,9 +20,9 @@
           <td><%= theme.name %></td>
           <td><%= link_to 'Show', theme %></td>
           <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-          <td>
-            <%= link_to theme, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do %>
-                <%= fa_icon 'trash' %>
+          <td class="textalign-right">
+            <%= link_to theme, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } do %>
+                <%= fa_icon 'trash-o', class: 'fa-lg' %> Delete
             <% end %>
           </td>
         </tr>

@@ -1,5 +1,31 @@
 <%= render partial: 'shared/heading', :locals => {:h1 => 'Contact', :p => 'Feel free to get in touch with us if you have any questions'} %>
 
-<div class="row main-content">
-  <p>Content goes here ...</p>
+<div class="row main-content contact">
+  <div class="row">
+    <div class="col-md-1">
+      <%= fa_icon 'envelope', class: 'fa-3x palette-1' %>
+    </div>
+    <div class="col-md-8"><br/>
+      <a href="mailto:team@socioneers.com">team@socioneers.com</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= fa_icon 'globe', class: 'fa-3x palette-2' %>
+    </div>
+    <div class="col-md-8"><br/>
+      <a href="http://www.socioneers.com" target="_blank">http://www.socioneers.com</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <%= fa_icon 'phone', class: 'fa-3x palette-3' %>
+    </div>
+    <div class="col-md-8"><br/>
+      +31 64 66 28 283
+    </div>
+  </div>
+
 </div>
