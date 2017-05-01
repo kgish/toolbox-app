@@ -24,7 +24,7 @@ User.create!(
 
 User.create!(
   email: 'info@michaelnieuwenweg.nl',
-  password: 'adm1n-t00lb0x-02',
+  password: 'adm1n-t00lb0x-03',
   username: 'michael',
   firstname: 'Michael',
   lastname: 'Nieuwenweg',

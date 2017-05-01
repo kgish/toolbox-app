@@ -11,6 +11,11 @@ This is the future famous toolbox-app which exposes a simple interface for colle
 ## User guide
 
 
+## Deployment
+
+    $ cap production deploy
+    $ cap production invoke:rake TASK=db:seed
+
 ## Author
 
 Kiffin Gish \< kiffin.gish@planet.nl \>
