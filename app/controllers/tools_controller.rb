@@ -4,7 +4,7 @@ class ToolsController < AdminController
   # GET /tools
   # GET /tools.json
   def index
-    @tools = Tool.all
+    @tools = Tool.all.page params[:page]
   end
 
   # GET /tools/1

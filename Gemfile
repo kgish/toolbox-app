@@ -28,9 +28,7 @@ gem 'simple_form'
 gem 'devise'
 # gem 'pundit', '~> 0.3.0'
 #
-# gem 'kaminari'
-# gem 'will_paginate', '~> 3.0.6'
-# gem 'will_paginate-bootstrap'
+gem 'kaminari'
 
 gem 'faker'
 gem 'bootsy'
