@@ -7,13 +7,18 @@
 
   <div class="form-inputs">
     <%= f.input :icon %>
+    <div class='legend'>
+      E.g. 'bell', 'book', 'bolt' (<a href="http://fontawesome.io/icons/" target="_blank">fontawesome icons</a>)
+    </div>
   </div>
 
   <div class="form-inputs">
     <%= f.input :color %>
-    <% 20.times do |i| %>
-      <%= i %>-<%= fa_icon 'square', class: "palette-#{i}", title: "#{i}" %>
-    <% end %>
+    <div class='legend'>
+      <% 7.times do |i| %>
+        <%= i %> = <%= fa_icon 'square', class: "palette-#{i}", title: "#{i}" %><%= i == 6 ? '' : ', ' %>
+      <% end %>
+    </div>
   </div>
 
   <div class="form-inputs">

@@ -150,6 +150,10 @@ a.nounderline {
 
 .bootsy textarea,
 .bootsy iframe {
-  background-color: whitesmoke;
   height: 500px !important;
+}
+
+.form-inputs .legend {
+  color: darkgrey;
+  margin: -10px 5px 10px;
 }

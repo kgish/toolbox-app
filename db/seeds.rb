@@ -23,6 +23,16 @@ User.create!(
 )
 
 User.create!(
+  email: 'info@michaelnieuwenweg.nl',
+  password: 'adm1n-t00lb0x-02',
+  username: 'michael',
+  firstname: 'Michael',
+  lastname: 'Nieuwenweg',
+  company: 'Socioneers',
+  admin: true
+)
+
+User.create!(
   email: 'demo@socioneers.com',
   password: 'demo123',
   username: 'demo',
