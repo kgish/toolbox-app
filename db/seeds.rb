@@ -110,7 +110,7 @@ Tool.delete_all
     name: tool[:name],
     icon: tool[:icon],
     title: tool[:title],
-    color: index,
+    color: index % 7,
     text: Faker::Lorem.sentence,
     content: Faker::Lorem.paragraph
   )
