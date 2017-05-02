@@ -9,6 +9,7 @@
     <tr>
       <th>Key</th>
       <th>Value</th>
+      <th>Description</th>
       <th colspan="3" class="textalign-right">
         <%= link_to new_global_path, class: 'btn btn-success' do %>
             <%= fa_icon 'check-square-o', class: 'fa-lg' %> New Global
@@ -22,6 +23,7 @@
         <tr>
           <td><%= global.key %></td>
           <td><%= global.value %></td>
+          <td><%= global.description %></td>
           <td><%= link_to 'Show', global %></td>
           <td><%= link_to 'Edit', edit_global_path(global) %></td>
           <td class="textalign-right">

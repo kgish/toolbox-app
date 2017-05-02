@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170429194213) do
+ActiveRecord::Schema.define(version: 20170502084301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 20170429194213) do
 
   create_table "globals", force: :cascade do |t|
     t.string "key"
-    t.text   "value"
+    t.string "value"
+    t.string "description"
     t.index ["key"], name: "index_globals_on_key", unique: true, using: :btree
   end
 

@@ -69,6 +69,6 @@ class GlobalsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def global_params
-      params.require(:global).permit(:icon, :color, :title, :text)
+      params.require(:global).permit(:key, :value, :description)
     end
 end
