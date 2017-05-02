@@ -4,7 +4,7 @@ class ToolsController < AdminController
   # GET /tools
   # GET /tools.json
   def index
-    @tools = Tool.all
+    @tools = Tool.all.paginate(:page => params[:page]).order('id ASC')
   end
 
   # GET /tools/1

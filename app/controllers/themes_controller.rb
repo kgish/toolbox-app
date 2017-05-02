@@ -4,7 +4,7 @@ class ThemesController < AdminController
   # GET /themes
   # GET /themes.json
   def index
-    @themes = Theme.all
+    @themes = Theme.all.paginate(:page => params[:page]).order('id ASC')
   end
 
   # GET /themes/1

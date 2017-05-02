@@ -4,7 +4,7 @@ class GlobalsController < AdminController
   # GET /globals
   # GET /globals.json
   def index
-    @globals = Global.all
+    @globals = Global.all.paginate(:page => params[:page]).order('id ASC')
   end
 
   # GET /globals/1
