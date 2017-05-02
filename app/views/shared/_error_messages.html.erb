@@ -10,3 +10,11 @@
  </ul>
 </div>
 <% end %>
+
+<% if false %>
+    How to use this for debugging simple_form errors:
+  <%= simple_form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    ...
+  <% end %>
+<% end %>
