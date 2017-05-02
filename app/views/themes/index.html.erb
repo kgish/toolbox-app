@@ -7,6 +7,7 @@
   <table class="table table-striped table-bordered">
     <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th colspan="3" class="textalign-right">
         <%= link_to new_theme_path, class: 'btn btn-success' do %>
@@ -19,6 +20,7 @@
     <tbody>
     <% @themes.each do |theme| %>
         <tr>
+          <td><%= theme.id %></td>
           <td><%= theme.name %></td>
           <td><%= link_to 'Show', theme %></td>
           <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
