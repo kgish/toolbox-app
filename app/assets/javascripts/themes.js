@@ -19,8 +19,7 @@ $(function() {
                 return function(e) {
                     img.attr('src', e.target.result);
                     img.attr('title', theFile.name);
-                    img.attr('width', 50);
-                    img.attr('height', 50);
+                    img.attr('height', 100);
                 };
             })(f);
 

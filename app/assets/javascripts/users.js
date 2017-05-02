@@ -22,7 +22,6 @@ $(function() {
                 return function(e) {
                     img.attr('src', e.target.result);
                     img.attr('title', theFile.name);
-                    img.width(100);
                     img.height(100);
                 };
             })(f);
