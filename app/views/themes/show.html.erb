@@ -10,5 +10,10 @@
   <%= @theme.description %>
 </p>
 
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag @theme.logo.thumb.url %>
+</p>
+
 <%= link_to 'Edit', edit_theme_path(@theme) %> |
 <%= link_to 'Back', themes_path %>

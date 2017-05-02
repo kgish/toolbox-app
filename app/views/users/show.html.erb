@@ -35,5 +35,10 @@
   <%= @user.admin %>
 </p>
 
+<p>
+  <strong>Logo:</strong>
+  <%= image_tag @user.photo.thumb.url %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

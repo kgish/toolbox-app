@@ -239,12 +239,14 @@ DEPENDENCIES
   capistrano-rake
   capistrano-rvm
   capistrano3-puma
+  carrierwave
   devise
   faker
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  mini_magick
   pg (~> 0.18)
   pry-rails
   puma (~> 3.0)

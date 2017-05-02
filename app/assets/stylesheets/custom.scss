@@ -80,7 +80,14 @@ footer {
 form {
   margin-top: 10px;
   margin-bottom: 10px;
+  .choose-file {
+    margin-bottom: 15px;
+  }
+  .logo-placeholder {
+    height: 50px;
+  }
 }
+
 .whitespace-nowrap {
   white-space: nowrap;
 }

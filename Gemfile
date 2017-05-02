@@ -26,10 +26,14 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
+
 # gem 'pundit', '~> 0.3.0'
-#
+
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'faker'
 gem 'bootsy'

@@ -25,9 +25,19 @@
     <%= f.input :company %>
   </div>
 
-    <div class="form-inputs">
-      <%= f.input :admin %>
+  <div class="form-inputs">
+    <%= f.input :admin %>
+  </div>
+
+  <div class="form-inputs">
+    <div class="form-group"><label class="control-label" for="theme_logo">Photo</label><br />
+      <%= image_tag @user.photo.thumb.url, class: 'photo-placeholder' %>
     </div>
+  </div>
+
+  <div class="form-inputs choose-file">
+    <%= f.file_field :photo %>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
