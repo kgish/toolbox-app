@@ -5,12 +5,25 @@
     <%= f.input :email %>
   </div>
 
-  <div class="form-inputs">
-    <%= f.input :username %>
-  </div>
+  <% if @user.persisted? %>
+    <span id="toggle-button" class="btn btn-success">Change Password <%= fa_icon 'arrow-down' %></span>
+    <div id="toggle-target" class="hide-me">
+  <% end %>
 
   <div class="form-inputs">
     <%= f.input :password %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :password_confirmation %>
+  </div>
+
+  <% if @user.persisted? %>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <%= f.input :username %>
   </div>
 
   <div class="form-inputs">
@@ -30,13 +43,13 @@
   </div>
 
   <div class="form-inputs">
-    <div class="form-group"><label class="control-label" for="theme_logo">Photo</label><br />
-      <%= image_tag @user.photo.thumb.url, class: 'photo-placeholder' %>
+    <div class="form-group"><label class="control-label" for="user_photo">Photo</label><br />
+      <%= image_tag @user.photo.url, id: 'user_photo' %>
     </div>
   </div>
 
   <div class="form-inputs choose-file">
-    <%= f.file_field :photo %>
+    <%= f.file_field :photo, accept: 'image/*' %>
   </div>
 
   <div class="form-actions">

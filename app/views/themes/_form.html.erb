@@ -11,12 +11,12 @@
 
   <div class="form-inputs">
     <div class="form-group"><label class="control-label" for="theme_logo">Logo</label><br/>
-      <%= image_tag @theme.logo.thumb.url, class: 'logo-placeholder' %>
+      <%= image_tag @theme.logo.url, id: 'theme_logo' %>
     </div>
   </div>
 
   <div class="form-inputs choose-file">
-    <%= f.file_field :logo %>
+    <%= f.file_field :logo, accept: 'image/*' %>
   </div>
 
   <div class="form-actions">
