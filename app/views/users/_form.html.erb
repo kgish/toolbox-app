@@ -1,5 +1,4 @@
 <%= simple_form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.error_notification %>
 
@@ -54,7 +53,10 @@
     <%= f.file_field :photo, accept: 'image/*' %>
   </div>
 
+  <%= f.error :base %>
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
 <% end %>
