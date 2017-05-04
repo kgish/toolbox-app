@@ -65,13 +65,6 @@
   </div>
 
   <% if current_user && !current_user.admin? %>
-  <div class="theme-banner">
-    <% if current_user.theme %>
-      <%= image_tag current_user.theme.logo.thumb.url, class: 'pull-left', style: "height:30px;margin-top:-5px;padding-right:20px" %>
-      <strong><%= current_user.theme.name %></strong> | <%= current_user.theme.description %>
-    <% else %>
-        <strong>No Theme</strong> | Please select a theme for this user.
-    <% end %>
-  </div>
+      <%= render partial: 'shared/theme_banner', :locals => {:theme => current_user.theme } %>
   <% end %>
 </nav>

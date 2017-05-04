@@ -17,5 +17,12 @@
   <%= image_tag @theme.logo.url %>
 </p>
 
+<p>
+  <strong>Banner:</strong><br/>
+  <div style="border:1px solid black">
+    <%= render partial: 'shared/theme_banner', :locals => {:theme => @theme } %>
+  </div>
+</p>
+
 <%= link_to 'Edit', edit_theme_path(@theme) %> |
 <%= link_to 'Back', themes_path %>

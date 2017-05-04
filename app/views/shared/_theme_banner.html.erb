@@ -1,0 +1,8 @@
+<div class="theme-banner">
+  <% if theme %>
+      <%= image_tag theme.logo.thumb.url, class: 'pull-left', style: "height:30px;margin-top:-5px;padding-right:20px" %>
+      <strong><%= theme.name %></strong> | <%= theme.description %>
+  <% else %>
+      <strong>No Theme</strong> | Please select a theme for this user.
+  <% end %>
+</div>
