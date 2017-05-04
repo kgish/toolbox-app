@@ -15,3 +15,15 @@
 //= require bootstrap-sprockets
 //= require bootsy
 //= require_tree .
+
+
+$(function() {
+    // Increase page padding-top to accomodate theme-banner of present.
+    var theme_banner = $('.theme-banner');
+    if (theme_banner.length) {
+        var body = $('body'),
+            padding_top = parseInt(body.css('padding-top')),
+            outer_height = parseInt(theme_banner.outerHeight());
+        body.css('padding-top', padding_top + outer_height);
+    }
+});

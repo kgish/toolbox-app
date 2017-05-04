@@ -8,12 +8,12 @@ body {
 
 body {
   background: #ddd;
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 
 .container {
   background: #fff;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.35)
 }
 
@@ -168,4 +168,16 @@ a.nounderline {
 
 #user_tool_ids {
 
+}
+
+.navbar-brand {
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+
+.theme-banner {
+  font-size: 16px;
+  height: 50px;
+  padding: 15px 25px;
+  background-color: white;
 }
