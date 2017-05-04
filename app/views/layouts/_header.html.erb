@@ -46,11 +46,16 @@
                 </li>
                 <li role="separator" class="divider"></li>
               <% end %>
-                <li>
-                  <%= link_to destroy_user_session_path, method: :delete do %>
-                    <%= fa_icon 'sign-out', class: 'fa-fw' %> &nbsp; Logout
-                  <% end %>
-                </li>
+              <li>
+                <%= link_to profile_path do %>
+                    <%= fa_icon 'user', class: 'fa-fw' %> &nbsp; Profile
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <%= fa_icon 'sign-out', class: 'fa-fw' %> &nbsp; Logout
+                <% end %>
+              </li>
             </ul>
           </li>
         </ul>

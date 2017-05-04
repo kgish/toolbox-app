@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'about#index'
   get '/contact' => 'contact#index'
+  get '/profile' => 'profile#show'
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
