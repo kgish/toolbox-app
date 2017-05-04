@@ -12,6 +12,7 @@
         <th>Email</th>
         <th>Company</th>
         <th class="textalign-center">Tools</th>
+        <th>Theme</th>
         <th>Admin</th>
         <th>Photo</th>
         <th colspan="3" class="textalign-center"><%= link_to 'New User', new_user_path %></th>
@@ -26,6 +27,7 @@
           <td><%= user.email %></td>
           <td><%= user.company %></td>
           <td class="textalign-center"><%= user.tools.count %></td>
+          <td><%= user.theme ? user.theme.name : 'None' %></td>
           <td class="textalign-center"><%= fa_icon user.admin? ? 'check' : 'circle-o' %></td>
           <td><%= image_tag user.photo.thumb.url %></td>
           <td><%= link_to 'Show', user %></td>

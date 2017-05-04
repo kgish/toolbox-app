@@ -53,7 +53,13 @@
 
     <div class="col-md-6">
 
-      <%= f.association :tools %>
+      <div class="form-inputs">
+        <%= f.association :tools %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.association :theme %>
+      </div>
 
       <% if @user.persisted? %>
           <span id="toggle-button" class="btn btn-success">Change Password <%= fa_icon 'arrow-down' %></span>

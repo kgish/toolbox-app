@@ -10,6 +10,7 @@
       <th>Id</th>
       <th>Name</th>
       <th>Description</th>
+      <th>Users</th>
       <th>Logo</th>
       <th colspan="3" class="textalign-center"><%= link_to 'New Theme', new_theme_path %></th>
     </tr>
@@ -21,6 +22,7 @@
           <td><%= theme.id %></td>
           <td><%= theme.name %></td>
           <td><%= theme.description %></td>
+          <td><%= theme.users.count %></td>
           <td><%= image_tag theme.logo.thumb.url %></td>
           <td><%= link_to 'Show', theme %></td>
           <td><%= link_to 'Edit', edit_theme_path(theme) %></td>

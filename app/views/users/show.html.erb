@@ -48,6 +48,10 @@
     </tr>
 
     <tr>
+      <td>Theme</td><td><%= @user.theme ? @user.theme.name : 'None' %>
+    </tr>
+
+    <tr>
       <td>Toolset</td>
       <td>
         <% if @user.tools.count > 0 %>
