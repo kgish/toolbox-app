@@ -4,7 +4,8 @@ class HomeController < ApplicationController
       if current_user.admin?
         render 'admin/index'
       else
-        @tools = Tool.all
+        @user = User.find(current_user.id)
+        @tools = @user.tools
       end
     end
   end
