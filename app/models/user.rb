@@ -13,4 +13,7 @@ class User < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :company, presence: true
+
+  has_and_belongs_to_many :tools
+  accepts_nested_attributes_for :tools
 end

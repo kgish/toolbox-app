@@ -11,11 +11,8 @@
         <th class="textalign-center">Icon</th>
         <th>Name</th>
         <th>Title</th>
-        <th colspan="3" class="textalign-right">
-          <%= link_to new_tool_path, class: 'btn btn-success' do %>
-              <%= fa_icon 'check-square-o', class: 'fa-lg' %> New Tool
-          <% end %>
-        </th>
+        <th>Users</th>
+        <th colspan="3" class="textalign-center"><%= link_to 'New Tool', new_tool_path %></th>
       </tr>
     </thead>
 
@@ -26,18 +23,17 @@
           <td class="textalign-center"><span class="palette-<%= tool.color %>"><%= fa_icon tool.icon %></span></td>
           <td><%= tool.name %></td>
           <td><%= tool.title %></td>
+          <td><%= tool.users.count %></td>
           <td><%= link_to 'Show', tool %></td>
           <td><%= link_to 'Edit', edit_tool_path(tool) %></td>
-          <td class="textalign-right">
-            <%= link_to tool, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } do %>
-                <%= fa_icon 'trash-o', class: 'fa-lg' %> Delete
-            <% end %>
+          <td>
+            <%= link_to 'Delete', tool, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <%= will_paginate @tools, renderer: BootstrapPagination::Rails %>
+  <%= will_paginate @tools, renderer: BootstrapPagination::Rails %><br/>
 
 </div>

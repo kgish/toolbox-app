@@ -15,6 +15,7 @@ class UsersController < AdminController
   # GET /users/new
   def new
     @user = User.new
+    @user.tools.build
   end
 
   # GET /users/1/edit
@@ -73,6 +74,6 @@ class UsersController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :password_confirmation, :firstname, :lastname, :company, :admin, :photo)
+      params.require(:user).permit(:email, :username, :password, :password_confirmation, :firstname, :lastname, :company, :admin, :photo, :tool_ids => [])
     end
 end

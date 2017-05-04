@@ -1,44 +1,65 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<h1>Show User</h1>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Property</th><th>Value</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.firstname %>
-</p>
+  <tbody>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.lastname %>
-</p>
+    <tr>
+      <td>Id</td><td><%= @user.id %></td>
+    </tr>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <tr>
+      <td>Username</td><td><%= @user.username %></td>
+    </tr>
 
-<p>
-  <strong>Company:</strong>
-  <%= @user.company %>
-</p>
+    <tr>
+      <td>Email</td><td><%= @user.email %></td>
+    </tr>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+    <tr>
+      <td>First name</td><td><%= @user.firstname %></td>
+    </tr>
 
-<p>
-  <strong>Logo:</strong>
-  <%= image_tag @user.photo.url %>
-</p>
+    <tr>
+      <td>Last name</td><td><%= @user.lastname %></td>
+    </tr>
+
+    <tr>
+      <td>Username</td><td><%= @user.username %></td>
+    </tr>
+
+    <tr>
+      <td>Company</td><td><%= @user.company %></td>
+    </tr>
+
+    <tr>
+      <td>Admin</td><td><%= @user.admin %></td>
+    </tr>
+
+    <tr>
+      <td>Logo</td><td><%= image_tag @user.photo.thumb.url %>
+    </tr>
+
+    <tr>
+      <td>Toolset</td>
+      <td>
+        <% if @user.tools.count > 0 %>
+          <%= @user.tools.map {|t| t.name }.join(', ') %>
+        <% else %>
+          None
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

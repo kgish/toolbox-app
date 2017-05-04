@@ -2,55 +2,78 @@
 
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email %>
-  </div>
+  <div class="row">
 
-  <% if @user.persisted? %>
-    <span id="toggle-button" class="btn btn-success">Change Password <%= fa_icon 'arrow-down' %></span>
-    <div id="toggle-target" class="hide-me">
-  <% end %>
+    <div class="col-md-6">
 
-  <div class="form-inputs">
-    <%= f.input :password %>
-  </div>
+      <div class="form-inputs">
+        <%= f.input :email %>
+      </div>
 
-  <div class="form-inputs">
-    <%= f.input :password_confirmation %>
-  </div>
+      <div class="form-inputs">
+        <%= f.input :username %>
+      </div>
 
-  <% if @user.persisted? %>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-inputs">
+            <%= f.input :firstname %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-inputs">
+            <%= f.input :lastname %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :company %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :admin %>
+      </div>
+
+      <div class="form-inputs">
+        <div class="form-group"><label class="control-label" for="user_photo">Photo</label><br />
+          <%= image_tag @user.photo.url, id: 'user_photo' %>
+        </div>
+      </div>
+
+
+      <div class="form-inputs choose-file">
+        <%= f.file_field :photo, accept: 'image/*' %>
+      </div>
+
     </div>
-  <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :username %>
-  </div>
+    <div class="col-md-6">
 
-  <div class="form-inputs">
-    <%= f.input :firstname %>
-  </div>
+      <%= f.association :tools %>
 
-  <div class="form-inputs">
-    <%= f.input :lastname %>
-  </div>
+      <% if @user.persisted? %>
+          <span id="toggle-button" class="btn btn-success">Change Password <%= fa_icon 'arrow-down' %></span>
+          <div id="toggle-target" class="hide-me">
+      <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :company %>
-  </div>
+      <div class="form-inputs">
+        <%= f.input :password %>
+      </div>
 
-  <div class="form-inputs">
-    <%= f.input :admin %>
-  </div>
+      <div class="form-inputs">
+        <%= f.input :password_confirmation %>
+      </div>
 
-  <div class="form-inputs">
-    <div class="form-group"><label class="control-label" for="user_photo">Photo</label><br />
-      <%= image_tag @user.photo.url, id: 'user_photo' %>
+      <% if @user.persisted? %>
+          </div>
+      <% end %>
+
     </div>
-  </div>
 
-  <div class="form-inputs choose-file">
-    <%= f.file_field :photo, accept: 'image/*' %>
   </div>
 
   <%= f.error :base %>
