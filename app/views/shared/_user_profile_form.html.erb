@@ -1,0 +1,95 @@
+<%= simple_form_for(@user) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <div class="form-inputs">
+        <%= f.input :email %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :username %>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-inputs">
+            <%= f.input :firstname %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-inputs">
+            <%= f.input :lastname %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :company %>
+      </div>
+
+      <% if controller == 'user' %>
+        <div class="form-inputs">
+          <%= f.input :admin %>
+        </div>
+      <% end %>
+
+      <div class="form-inputs">
+        <div class="form-group"><label class="control-label" for="user_photo">Photo</label><br />
+          <%= image_tag @user.photo.url, id: 'user_photo' %>
+        </div>
+      </div>
+
+
+      <div class="form-inputs choose-file">
+        <%= f.file_field :photo, accept: 'image/*' %>
+      </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+      <% if controller == 'user' %>
+        <div class="form-inputs">
+          <%= f.association :tools %>
+        </div>
+
+        <div class="form-inputs">
+          <%= f.association :theme %>
+        </div>
+      <% end %>
+
+      <% if @user.persisted? || controller == 'profile' %>
+          <span id="toggle-button" class="btn btn-success">Change Password <%= fa_icon 'arrow-down' %></span>
+          <div id="toggle-target" class="hide-me">
+      <% end %>
+
+      <div class="form-inputs">
+        <%= f.input :password %>
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :password_confirmation %>
+      </div>
+
+      <% if @user.persisted? || controller == 'profile' %>
+          </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <%= f.error :base %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

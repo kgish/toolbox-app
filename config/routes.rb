@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   resources :users
   resources :globals
   resources :themes
+  resources :profiles
 
   resources :portals, only: [:show]
 
   get '/about' => 'about#index'
   get '/contact' => 'contact#index'
-  get '/profile' => 'profile#show'
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
