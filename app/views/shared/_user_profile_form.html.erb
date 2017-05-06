@@ -46,9 +46,9 @@
         </div>
       </div>
 
-
       <div class="form-inputs choose-file">
         <%= f.file_field :photo, accept: 'image/*' %>
+        <%= f.hidden_field :photo_cache %>
       </div>
 
     </div>

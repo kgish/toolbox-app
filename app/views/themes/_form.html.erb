@@ -18,6 +18,7 @@
 
   <div class="form-inputs choose-file">
     <%= f.file_field :logo, accept: 'image/*' %>
+    <%= f.hidden_field :logo_cache %>
   </div>
 
   <%= f.error :base %>
