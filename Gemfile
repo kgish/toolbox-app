@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.2'
+gem 'rails', '~> 5.1.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -22,10 +22,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass'
-
 gem 'font-awesome-rails'
-gem 'simple_form'
-gem 'devise'
+
+#gem 'simple_form'
+gem 'simple_form', github: 'elsurudo/simple_form', branch: 'rails-5.1.0'
+
+# gem devise
+gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
+gem 'erubis'
 
 # gem 'pundit', '~> 0.3.0'
 
