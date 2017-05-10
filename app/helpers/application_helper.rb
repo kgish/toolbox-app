@@ -3,4 +3,7 @@ module ApplicationHelper
     current_page?(link_path) ? 'active' : ''
   end
 
+  def external_link(content)
+    /^https?:\/\//.match(content)
+  end
 end
