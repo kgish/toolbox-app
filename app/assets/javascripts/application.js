@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootsy
+//= require dhtmlxgantt/dhtmlxgantt
 //= require_tree .
 
 

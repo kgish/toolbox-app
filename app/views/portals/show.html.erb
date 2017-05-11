@@ -1,5 +1,5 @@
 <%= render partial: 'shared/heading', :locals => {:h1 => @tool.title, :p => @tool.text, :icon => { :color => @tool.color, :name => @tool.icon } } %>
 
-<div class="row main-content">
+<div class="row main-content <%= @tool.name %>">
   <%= sanitize(@tool.content) %>
 </div>
