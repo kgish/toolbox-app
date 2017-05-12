@@ -121,7 +121,7 @@ a.no-underline {
     text-align: center;
 }
 
-/*Right-justify  text.
+/* Right-justify  text.
 //-------------------------------------------------- */
 .textalign-right {
   text-align: right;
@@ -134,19 +134,45 @@ a.no-underline {
 .palette-2  { color: #00a6ed; }
 .palette-3  { color: #7fb800; }
 .palette-4  { color: #0d2c54; }
-.palette-5  { color: #f6511d; }
-.palette-6  { color: #000000; }
+.palette-5  { color: #ad1d28; }
+.palette-6  { color: #2b3e50; }
 .palette-7  { color: #337ab7; }
 .palette-8  { color: #0e8a16; }
 .palette-9  { color: #b12024; }
 .palette-10 { color: #78cd51; }
 .palette-11 { color: #ec008c; }
 .palette-12 { color: #ff6600; }
+.palette-13 { color: #158cba; }
+.palette-14 { color: #28b62c; }
+.palette-15 { color: #40464c; }
+.palette-16 { color: #48ca3b; }
+.palette-17 { color: #4d3a7d; }
+.palette-18 { color: #4e5d6c; }
+.palette-19 { color: #5bc0de; }
+.palette-20 { color: #5cb85c; }
+
+.palette-21 { color: #64c0db; }
+.palette-22 { color: #71c971; }
+.palette-23 { color: #75caeb; }
+.palette-24 { color: #848b91; }
+.palette-25 { color: #d9534f; }
+.palette-26 { color: #dddddd; }
+.palette-27 { color: #debb27; }
+.palette-28 { color: #df691a; }
+.palette-29 { color: #df6e1e; }
+.palette-30 { color: #eeeeee; }
+.palette-31 { color: #ef6c68; }
+.palette-32 { color: #f0ad4e; }
+.palette-33 { color: #f99b15; }
+.palette-34 { color: #ff4136; }
+.palette-35 { color: #ff851b; }
 
 a.nounderline {
     text-decoration: none;
 }
 
+/* Bootsy
+-------------------------------------------------- */
 .bootsy textarea,
 .bootsy iframe {
   height: 500px !important;
@@ -164,10 +190,6 @@ a.nounderline {
 #toggle-button {
   font-size: smaller;
   margin-bottom: 15px;
-}
-
-#user_tool_ids {
-
 }
 
 .navbar-brand {
