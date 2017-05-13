@@ -1,129 +1,26 @@
 $(function() {
     var gantt_planner = $('.gantt-planner');
     if (gantt_planner.length) {
+        console.log('Detected gantt-planner page.');
         gantt_planner.html('');
         gantt_planner.css({ height: '500px'});
         gantt_planner.append('<div id="gantt_here" style="width:100%;height:100%"></div>');
         gantt.init('gantt_here');
         gantt.parse({
             "data": [
-                {
-                    "id": 11,
-                    "text": "Project #1",
-                    "start_date": "",
-                    "duration": "",
-                    "progress": 0.6,
-                    "open": true
-                },
-                {
-                    "id": 12,
-                    "text": "Task #1",
-                    "start_date": "03-04-2013",
-                    "duration": "5",
-                    "parent": "11",
-                    "progress": 1,
-                    "open": true
-                },
-                {
-                    "id": 13,
-                    "text": "Task #2",
-                    "start_date": "",
-                    "duration": "",
-                    "parent": "11",
-                    "progress": 0.5,
-                    "open": true
-                },
-                {
-                    "id": 14,
-                    "text": "Task #3",
-                    "start_date": "02-04-2013",
-                    "duration": "6",
-                    "parent": "11",
-                    "progress": 0.8,
-                    "open": true
-                },
-                {
-                    "id": 15,
-                    "text": "Task #4",
-                    "start_date": "",
-                    "duration": "",
-                    "parent": "11",
-                    "progress": 0.2,
-                    "open": true
-                },
-                {
-                    "id": 16,
-                    "text": "Task #5",
-                    "start_date": "02-04-2013",
-                    "duration": "7",
-                    "parent": "11",
-                    "progress": 0,
-                    "open": true
-                },
-
-                {
-                    "id": 17,
-                    "text": "Task #2.1",
-                    "start_date": "03-04-2013",
-                    "duration": "2",
-                    "parent": "13",
-                    "progress": 1,
-                    "open": true
-                },
-                {
-                    "id": 18,
-                    "text": "Task #2.2",
-                    "start_date": "06-04-2013",
-                    "duration": "3",
-                    "parent": "13",
-                    "progress": 0.8,
-                    "open": true
-                },
-                {
-                    "id": 19,
-                    "text": "Task #2.3",
-                    "start_date": "10-04-2013",
-                    "duration": "4",
-                    "parent": "13",
-                    "progress": 0.2,
-                    "open": true
-                },
-                {
-                    "id": 20,
-                    "text": "Task #2.4",
-                    "start_date": "10-04-2013",
-                    "duration": "4",
-                    "parent": "13",
-                    "progress": 0,
-                    "open": true
-                },
-                {
-                    "id": 21,
-                    "text": "Task #4.1",
-                    "start_date": "03-04-2013",
-                    "duration": "4",
-                    "parent": "15",
-                    "progress": 0.5,
-                    "open": true
-                },
-                {
-                    "id": 22,
-                    "text": "Task #4.2",
-                    "start_date": "03-04-2013",
-                    "duration": "4",
-                    "parent": "15",
-                    "progress": 0.1,
-                    "open": true
-                },
-                {
-                    "id": 23,
-                    "text": "Task #4.3",
-                    "start_date": "03-04-2013",
-                    "duration": "5",
-                    "parent": "15",
-                    "progress": 0,
-                    "open": true
-                }
+                { "id": 11, "text": "Project #1", "start_date": "", "duration": "", "progress": 0.6, "open": true },
+                { "id": 12, "text": "Task #1",    "start_date": "03-04-2013", "duration": "5", "parent": "11", "progress": 1, "open": true },
+                { "id": 13, "text": "Task #2",    "start_date": "", "duration": "", "parent": "11", "progress": 0.5, "open": true },
+                { "id": 14, "text": "Task #3",    "start_date": "02-04-2013", "duration": "6", "parent": "11", "progress": 0.8, "open": true },
+                { "id": 15, "text": "Task #4",    "start_date": "", "duration": "", "parent": "11", "progress": 0.2, "open": true },
+                { "id": 16, "text": "Task #5",    "start_date": "02-04-2013", "duration": "7", "parent": "11", "progress": 0, "open": true },
+                { "id": 17, "text": "Task #2.1",  "start_date": "03-04-2013", "duration": "2", "parent": "13", "progress": 1, "open": true },
+                { "id": 18, "text": "Task #2.2",  "start_date": "06-04-2013", "duration": "3", "parent": "13", "progress": 0.8, "open": true },
+                { "id": 19, "text": "Task #2.3",  "start_date": "10-04-2013", "duration": "4", "parent": "13", "progress": 0.2, "open": true },
+                { "id": 20, "text": "Task #2.4",  "start_date": "10-04-2013", "duration": "4", "parent": "13", "progress": 0, "open": true },
+                { "id": 21, "text": "Task #4.1",  "start_date": "03-04-2013", "duration": "4", "parent": "15", "progress": 0.5, "open": true },
+                { "id": 22, "text": "Task #4.2",  "start_date": "03-04-2013", "duration": "4", "parent": "15", "progress": 0.1, "open": true },
+                { "id": 23, "text": "Task #4.3",  "start_date": "03-04-2013", "duration": "5", "parent": "15", "progress": 0, "open": true }
             ],
             "links": [
                 {"id": "10", "source": "11", "target": "12", "type": "1"},
@@ -140,5 +37,45 @@ $(function() {
                 {"id": "21", "source": "15", "target": "23", "type": "2"}
             ]
         });
+    }
+
+    var windowLocationURI = function() {
+        // We want to pass the uri to the store server, however we first need to strip off the
+        // query string (?) and/or the fragment (#) as well as the reply_id if present,
+        // e.g. /path/to/.../11/2 => /path/to/.../11
+        var uri = encodeURI(window.location.href.split('?')[0]);
+        uri = uri.split('#')[0];
+        if (/\/\d+\/\d+$/.test(uri)) {
+            uri = uri.replace(/\/\d+$/,'');
+        }
+        return uri;
+    };
+
+    var annotate = $('.annotate');
+    if (annotate.length) {
+        console.log('Detected annotate page.');
+        $('.annotate').annotator()
+            .annotator('setupPlugins', {}, {
+                Auth: false,
+                Store: {
+                    prefix: 'https://annotatorjs-server-dev.herokuapp.com/',
+                    urls: {
+                        // These are the default URLs.
+                        create: '/annotations',
+                        update: '/annotations/:id',
+                        destroy: '/annotations/:id',
+                        search: '/search'
+                    },
+                    annotationData: {
+                        topic_id: 1234567,
+                        topic_title: 'Participation Tools Annotate',
+                        // checksum: topic_checksum
+                    },
+                    loadFromSearch: {
+                        topic_id: 1234567,
+                        uri: windowLocationURI()
+                    }
+                }
+            })
     }
 });

@@ -15,6 +15,7 @@
 //= require bootstrap-sprockets
 //= require bootsy
 //= require dhtmlxgantt/dhtmlxgantt
+//= require annotator/annotator-full.min
 //= require_tree .
 
 
