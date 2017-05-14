@@ -73,12 +73,16 @@ Tool.delete_all
   {
     name: 'annotate',
     icon: 'paperclip',
-    title: 'Annotate'
+    title: 'Annotate',
+    text: 'Select text below to create annotations',
+    content: "<p>#{Faker::Lorem.paragraphs(10, 10).join('</p><p>')}</p>"
   },
   {
-    name: 'planner',
-    icon: 'calendar',
-    title: 'Planner'
+    name: 'gantt-planner',
+    icon: 'th-list',
+    title: 'Planner',
+    text: 'Advanced Gantt Chart',
+    content: '...'
   },
   {
     name: 'budget',
@@ -110,9 +114,9 @@ Tool.delete_all
     name: tool[:name],
     icon: tool[:icon],
     title: tool[:title],
-    color: index % 7,
-    text: Faker::Lorem.sentence,
-    content: Faker::Lorem.paragraph
+    color: index % 20,
+    text: tool[:text] || Faker::Lorem.sentence,
+    content: tool[:content] || Faker::Lorem.paragraph
   )
 end
 

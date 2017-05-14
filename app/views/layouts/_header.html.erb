@@ -69,4 +69,11 @@
   <% if current_user && !current_user.admin? %>
       <%= render partial: 'shared/theme_banner', :locals => {:theme => current_user.theme } %>
   <% end %>
+
+  <% if current_user %>
+    <script type="application/javascript">
+      var current_user = <%= raw current_user.to_json %>;
+    </script>
+  <% end %>
+
 </nav>

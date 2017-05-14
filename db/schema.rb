@@ -30,9 +30,11 @@ ActiveRecord::Schema.define(version: 20170504140228) do
   end
 
   create_table "globals", force: :cascade do |t|
-    t.string "key"
-    t.string "value"
-    t.string "description"
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
     t.index ["key"], name: "index_globals_on_key", unique: true, using: :btree
   end
 
