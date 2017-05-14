@@ -86,13 +86,13 @@ $(function() {
             },
 
             Permissions: {
-                user: current_user ? {id: current_user.id, name: current_user.username} : undefined,
+                user: current_user ? { id: current_user.id, name: current_user.username } : undefined,
                 permissions: {
                     'read': [], // Anyone can read the annotation
                     // But only the author may update or delete it.
                     'update': current_user ? [current_user.id] : [],
                     'delete': current_user ? [current_user.id] : [],
-                    'admin': current_user.admin ? [current_user.id] : []
+                    'admin': current_user && current_user.admin ? [current_user.id] : []
                 },
                 showViewPermissionsCheckbox: true,
                 showEditPermissionsCheckbox: true,
@@ -104,8 +104,8 @@ $(function() {
                     return user;
                 },
                 userString: function (user) {
-                    if (user && user.username) {
-                        return user.username;
+                    if (user && user.name) {
+                        return user.name;
                     }
 
                     return user;
@@ -114,12 +114,14 @@ $(function() {
                     var token, tokens, _i, _len;
                     if (annotation.permissions) {
                         tokens = annotation.permissions[action] || [];
+                        // console.log('tokens', tokens);
                         if (tokens.length === 0) {
                             return true;
                         }
                         for (_i = 0, _len = tokens.length; _i < _len; _i++) {
                             token = tokens[_i];
                             if (this.userId(user) === token) {
+                                console.log('true');
                                 return true;
                             }
                         }
