@@ -128,7 +128,15 @@ Theme.create!(
 
 Global.delete_all
 
-Global.create!(
-    key: 'app_name',
+[
+  {
+    key: 'app-name',
     value: 'Participation-tools'
-)
+  },
+  {
+    key: 'annotator-store-url',
+    value: Rails.env === 'production' ? 'https://annotatorjs-server-dev.herokuapp.com' : 'http://localhost:3001'
+  }
+].each do |item|
+  Global.create!(item)
+end

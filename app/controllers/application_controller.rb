@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   # Force user to redirect to login page if the user was not logged in
   before_action :authenticate_user!
+  before_action :setup_globals
 
   def record_not_found
     flash[:error] = '404 Record Not Found'
@@ -17,6 +18,13 @@ class ApplicationController < ActionController::Base
     else
       super
     end
+  end
+
+  def setup_globals
+    global = Global.find_by(key: 'app-name')
+    @app_name = global ? global.value : 'Participation-Tool'
+    global = Global.find_by(key: 'annotator-store-url')
+    @annotator_store_url = global ? global.value : 'http://localhost:3001'
   end
 
 end
