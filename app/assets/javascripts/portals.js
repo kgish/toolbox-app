@@ -41,12 +41,10 @@ $(function() {
         gantt.init('gantt_here');
         // gantt.init('gantt_here', new Date(2017, 3, 1), new Date(2017, 3, 15));
         gantt.parse(tasks);
-
-
     }
 
-    var annotate = $('.annotate');
-    if (annotate.length) {
+    var elem_annotate = $('.annotate');
+    if (elem_annotate.length) {
 
         var windowLocationURI = function() {
             // We want to pass the uri to the store server, however we first need to strip off the
@@ -68,81 +66,61 @@ $(function() {
             return 'Participation Tool - Annotate - ' + getTopicId();
         };
 
-        $('.annotate').annotator().annotator('setupPlugins', {}, {
-            // Disable authentication for now.
-            Auth: false,
-
-            Store: {
-                prefix: annotator_store_url,
-                urls: {
-                    // These are the default URLs.
-                    create: '/annotations',
-                    update: '/annotations/:id',
-                    destroy: '/annotations/:id',
-                    search: '/search'
-                },
-                annotationData: {
-                    topic_id: getTopicId(),
-                    topic_title: getTopicTitle()
-                },
-                loadFromSearch: {
-                    topic_id: getTopicId(),
-                    uri: windowLocationURI()
-                }
-            },
-
-            Permissions: {
-                user: (current_user ? { id: current_user.id, name: current_user.username } : undefined),
-                permissions: {
-                    'read': [], // Anyone can read the annotation
-                    // But only the author may update or delete it.
-                    'update': (current_user ? [current_user.id] : []),
-                    'delete': (current_user ? [current_user.id] : []),
-                    'admin': ((current_user && current_user.admin) ? [current_user.id] : [])
-                },
-                showViewPermissionsCheckbox: true,
-                showEditPermissionsCheckbox: true,
-                userId: function (user) {
-                    if (user && user.id) {
-                        return user.id;
-                    }
-
-                    return user;
-                },
-                userString: function (user) {
-                    if (user && user.name) {
-                        return user.name;
-                    }
-
-                    return user;
-                },
-                userAuthorize: function (action, annotation, user) {
-                    var token, tokens, _i, _len;
-                    if (annotation.permissions) {
-                        tokens = annotation.permissions[action] || [];
-                        // console.log('tokens', tokens);
-                        if (tokens.length === 0) {
-                            return true;
-                        }
-                        for (_i = 0, _len = tokens.length; _i < _len; _i++) {
-                            token = tokens[_i];
-                            if (this.userId(user) === token) {
-                                console.log('true');
-                                return true;
-                            }
-                        }
-                        return false;
-                    } else if (annotation.user) {
-                        if (user) {
-                            return this.userId(user) === this.userId(annotation.user);
-                        } else {
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-            }
+        var annotator = elem_annotate.annotator({
+            readOnly: !current_user || current_user.id === ''
         });
+
+        annotator.annotator('addPlugin', 'Unsupported');
+        annotator.annotator('addPlugin', 'Tags');
+        annotator.annotator('addPlugin', 'Filter');
+        // annotator.annotator('addPlugin', 'Markdown');
+
+        annotator.annotator('addPlugin', 'Store', {
+            prefix: annotator_store_url,
+            urls: {
+                // These are the default URLs.
+                create: '/annotations',
+                update: '/annotations/:id',
+                destroy: '/annotations/:id',
+                search: '/annotations/search'
+            },
+            annotationData: {
+                topic_id: getTopicId(),
+                topic_title: getTopicTitle()
+                // checksum: topic_checksum
+            },
+            loadFromSearch: {
+                topic_id: getTopicId(),
+                uri: windowLocationURI()
+            }
+        }); // add plugin Store
+
+        annotator.annotator('addPlugin', 'Permissions', {
+            user: current_user ? { id: current_user.id, name: current_user.username } : undefined,
+            permissions: {
+                'read': [], // Anyone can read the annotation
+                // But only the author may update or delete it.
+                'update': current_user ? [current_user.id] : [],
+                'delete': current_user ? [current_user.id]: [],
+                'admin': current_user ? [current_user.id] : []
+            },
+            showViewPermissionsCheckbox: true,
+            showEditPermissionsCheckbox: true,
+            userId: function (user) {
+                if (user && user.id) {
+                    return user.id;
+                }
+
+                return user;
+            },
+            userString: function (user) {
+                if (user && user.name) {
+                    return user.name;
+                }
+
+                return user;
+            }
+        }); // add plugin Permissions
 
         // Move the filter toolbat at the top of the window to the top of the content.
         var annotator_filter = $('.annotator-filter');
