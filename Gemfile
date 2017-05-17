@@ -45,6 +45,8 @@ gem 'mini_magick'
 gem 'faker'
 gem 'bootsy'
 
+gem 'data-confirm-modal'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'

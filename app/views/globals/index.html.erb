@@ -24,7 +24,7 @@
           <td><%= global.description %></td>
           <td><%= link_to 'Show', global %></td>
           <td><%= link_to 'Edit', edit_global_path(global) %></td>
-          <td><%= link_to 'Delete', global, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', global, method: :delete, data: { title: 'WARNING', confirm: 'Are you sure you want to delete this global?' } %></td>
         </tr>
     <% end %>
     </tbody>

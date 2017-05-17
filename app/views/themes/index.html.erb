@@ -26,7 +26,7 @@
           <td><%= image_tag theme.logo.thumb.url %></td>
           <td><%= link_to 'Show', theme %></td>
           <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-          <td><%= link_to 'Delete', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', theme, method: :delete, data: { title: 'WARNING', confirm: 'Are you sure you want to delete this theme?' } %></td>
         </tr>
     <% end %>
     </tbody>
