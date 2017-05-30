@@ -43,8 +43,11 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'faker'
+
+# https://github.com/volmer/bootsy
 gem 'bootsy'
 
+# https://github.com/ifad/data-confirm-modal
 gem 'data-confirm-modal'
 
 group :development, :test do
@@ -68,5 +71,5 @@ group :development do
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
-  gem 'capistrano-rake', require: false
+  gem 'capistrano-rake',    require: false
 end
