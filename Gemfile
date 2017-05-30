@@ -33,6 +33,7 @@ gem 'simple_form'
 gem 'devise'
 # gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 # gem 'erubis'
+gem "devise_openid_authenticatable"
 
 # gem 'pundit', '~> 0.3.0'
 
