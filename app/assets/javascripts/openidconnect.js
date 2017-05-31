@@ -6,14 +6,17 @@ var clientInfo = {
 };
 
 var providerInfo = OIDC.discover('https://sso.participation.tools');
+console.log('providerInfo', JSON.stringify(providerInfo));
 OIDC.setClientInfo( clientInfo );
 OIDC.setProviderInfo( providerInfo );
 OIDC.storeInfo(providerInfo, clientInfo);
 // Remove State and Nonce from previous session
 sessionStorage.removeItem('state');
 sessionStorage.removeItem('nonce');
+console.log('sessionStorage', JSON.stringify(sessionStorage));
 loginRequest = OIDC.generateLoginRequest({scope : 'openid profile email',
     response_type : 'token id_token'});
+console.log('loginRequest', JSON.stringify(loginRequest));
 
 $(function() {
     $('#clientInfo').html(JSONObjToHTMLTable(clientInfo));
