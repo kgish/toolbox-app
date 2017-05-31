@@ -11,8 +11,8 @@ $(function() {
         OIDC.debug(true, id_token);
 
         setTimeout(function(){
-            document.getElementById("retrievedInfo").innerHTML = '<b>Id_token</b>' + tokenClaimsHTMLString +
-                '\n<b>User Info</b>' + userInfoClaimsHTMLString;
+            $('#tokenClaims').html(tokenClaimsHTMLString);
+            $('#userInfoClaims').html(userInfoClaimsHTMLString);
         }, 1000);
     }
 });
