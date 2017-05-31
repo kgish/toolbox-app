@@ -1,4 +1,4 @@
-<%= render partial: 'shared/heading', :locals => {:h1 => 'Login', :p => 'Please enter your email and password in order to login or use SSO'} %>
+<%= render partial: 'shared/heading', :locals => {:h1 => 'Login', :p => 'In order to login you must enter your email and password or just use SSO'} %>
 
 <div class="row main-content">
 
@@ -27,8 +27,10 @@
           <%= fa_icon 'openid', class: 'fa-fw' %>&nbsp; OpenID Connect
       <% end %>
 
-      <%= link_to '/implicit-test.html', class: 'btn btn-success' do %>
-          <%= fa_icon 'openid', class: 'fa-fw' %>&nbsp; Implicit Test
+      <% if false %>
+        <%= link_to '/implicit-test.html', class: 'btn btn-success' do %>
+            <%= fa_icon 'openid', class: 'fa-fw' %>&nbsp; Implicit Test
+        <% end %>
       <% end %>
 
     </div>
