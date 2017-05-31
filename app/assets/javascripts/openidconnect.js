@@ -2,21 +2,26 @@
 
 var clientInfo = {
 //                client_id : '(your-client-id)',
-    redirect_uri : 'https://demo.participation.tools/login-callback.html'
+    redirect_uri : 'https://demo.participation.tools/openidcallback'
 };
 
+console.log('providerInfo');
 var providerInfo = OIDC.discover('https://sso.participation.tools');
-console.log('providerInfo', JSON.stringify(providerInfo));
+console.log(JSON.stringify(providerInfo));
+console.log('setClientInfo');
 OIDC.setClientInfo( clientInfo );
+console.log('setProviderInfo');
 OIDC.setProviderInfo( providerInfo );
+console.log('storeInfo');
 OIDC.storeInfo(providerInfo, clientInfo);
 // Remove State and Nonce from previous session
 sessionStorage.removeItem('state');
 sessionStorage.removeItem('nonce');
-console.log('sessionStorage', JSON.stringify(sessionStorage));
+console.log('sessionStorage='+JSON.stringify(sessionStorage));
+console.log('loginRequest');
 loginRequest = OIDC.generateLoginRequest({scope : 'openid profile email',
     response_type : 'token id_token'});
-console.log('loginRequest', JSON.stringify(loginRequest));
+console.log(JSON.stringify(loginRequest));
 
 $(function() {
     $('#clientInfo').html(JSONObjToHTMLTable(clientInfo));
