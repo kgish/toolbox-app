@@ -2,7 +2,7 @@
 
 var clientInfo = {
     // client_id : '(your-client-id)',
-    redirect_uri : 'https://' + window.location.host + '/openidcallback'
+    redirect_uri : 'https://demo.participation.tools/openidcallback'
 };
 
 var providerInfo = OIDC.discover('https://sso.participation.tools');
