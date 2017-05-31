@@ -24,7 +24,11 @@
       <p>Or use SSO</p>
 
       <%= link_to '/openidconnect', class: 'btn btn-success' do %>
-          <%= fa_icon 'openid', class: 'fa-fw' %> &nbsp; OpenID
+          <%= fa_icon 'openid', class: 'fa-fw' %>&nbsp; OpenID Connect
+      <% end %>
+
+      <%= link_to '/implicit-test.html', class: 'btn btn-success' do %>
+          <%= fa_icon 'openid', class: 'fa-fw' %>&nbsp; Implicit Test
       <% end %>
 
     </div>

@@ -16,6 +16,7 @@
 //= require bootsy
 //= require dhtmlxgantt/dhtmlxgantt
 //= require annotator/annotator-full.min
+//= require gluu/openidconnect.min
 //= require data-confirm-modal
 //= require_tree .
 
