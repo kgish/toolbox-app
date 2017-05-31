@@ -1,4 +1,4 @@
-class AboutController < ApplicationController
+class OpenidconnectController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index; end

@@ -27,12 +27,6 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
                 <li>
-                  <%= link_to '/implicit-test.html' do %>
-                    <%= fa_icon 'openid', class: 'fa-fw' %> &nbsp; OpenID
-                  <% end %>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li>
                   <%= link_to users_path do %>
                     <%= fa_icon 'users', class: 'fa-fw' %> &nbsp; Users
                   <% end %>

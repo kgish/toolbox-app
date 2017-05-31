@@ -1,0 +1,21 @@
+<%= render partial: 'shared/heading', :locals => {:h1 => 'OpenID Connect', :p => 'Single sign allows users to access multiple websites with a single identity'} %>
+
+<div class="row main-content openidconnect">
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+        <button id='authenticate' type="button" class="btn btn-success">Authenticate</button>
+        <button id='toggle' type="button" class="btn btn-success">Information <%= fa_icon 'caret-down' %></button>
+
+    </div>
+</div>
+
+<div id="toggle-contents" class="row hide-me">
+
+  <h2>Client Info</h2>
+  <div id="clientInfo">Not found.</div>
+
+  <h2>Login Request</h2>
+  <div id="loginRequest">Not generated yet.</div>
+</div>
