@@ -1,24 +1,19 @@
 //= require gluu/openidconnect.min
 
 var clientInfo = {
-    // client_id : '(your-client-id)',
+//                client_id : '(your-client-id)',
     redirect_uri : 'https://demo.participation.tools/login-callback.html'
 };
 
 var providerInfo = OIDC.discover('https://sso.participation.tools');
-
 OIDC.setClientInfo( clientInfo );
 OIDC.setProviderInfo( providerInfo );
 OIDC.storeInfo(providerInfo, clientInfo);
 // Remove State and Nonce from previous session
-
 sessionStorage.removeItem('state');
 sessionStorage.removeItem('nonce');
-
-loginRequest = OIDC.generateLoginRequest({
-    scope : 'openid profile email',
-    response_type : 'token id_token'
-});
+loginRequest = OIDC.generateLoginRequest({scope : 'openid profile email',
+    response_type : 'token id_token'});
 
 $(function() {
     $('#clientInfo').html(JSONObjToHTMLTable(clientInfo));
