@@ -1,7 +1,7 @@
 $(function() {
     if ($('.openidconnect').length) {
         var clientInfo = {
-            //                client_id : '(your-client-id)',
+            client_id : '@!C7CB.FC99.01D8.26E0!0001!CA90.BB7A!0008!3FCC.EFFA.33C0.A8EA',
             redirect_uri: 'https://demo.participation.tools/openidcallback'
         };
 
