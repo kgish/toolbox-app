@@ -25,7 +25,7 @@ $(function() {
         });
         //console.log(JSON.stringify(loginRequest));
 
-        setTimeout(function(){
+        // setTimeout(function(){
 
             $('#clientInfo').html(JSONObjToHTMLTable(clientInfo));
             $('#loginRequest').html(JSONObjToHTMLTable(loginRequest));
@@ -54,6 +54,6 @@ $(function() {
 
             });
 
-        }, 1000);
+        // }, 1000);
     }
 });
