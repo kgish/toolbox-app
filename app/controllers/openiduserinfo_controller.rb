@@ -3,14 +3,15 @@ class OpeniduserinfoController < ApplicationController
 
   def userinfo
 
-    render json: userinfo_params, status: :ok
+    render json: params, status: :ok
+    # render json: userinfo_params, status: :ok
 
   end
 
-    private
-
-    def userinfo_params
-      params.require(:userinfo).permit(:updated_at, :uid, :name, :given_name, :family_name, :email, :sub, :role, :o)
-    end
+    # private
+    #
+    # def userinfo_params
+    #   params.require(:userinfo).permit(:updated_at, :uid, :name, :given_name, :family_name, :email, :sub, :role, :o)
+    # end
 
 end
