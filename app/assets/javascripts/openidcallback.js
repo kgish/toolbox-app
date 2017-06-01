@@ -12,5 +12,16 @@ $(function() {
 
         $('#tokenClaims').html(tokenClaimsHTMLString);
         $('#userInfoClaims').html(userInfoClaimsHTMLString);
+
+        var url = '/openiduserinfo',
+            json = { userInfo: userInfoClaims };
+
+        $.post(url, json, function (data, status, jqxhr) {
+            if (status === 'success') {
+                console.log('POST '+url+' => OK, data='+JSON.stringify(data));
+            } else {
+               console.error('POST '+url+' => NOK (status='+jqxhr.status+', statusText='+jqxhr.statusText+', responseText='+jqxhr.responseText+')');
+            }
+        });
     }
 });

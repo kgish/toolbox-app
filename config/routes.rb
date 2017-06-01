@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/openidconnect' => 'openidconnect#index'
   get '/openidcallback' => 'openidcallback#index'
+  post '/openiduserinfo' => 'openiduserinfo#userinfo'
 
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
