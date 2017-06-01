@@ -10,9 +10,7 @@ $(function() {
         var userInfoClaimsHTMLString = JSONObjToHTMLTable(userInfoClaims);
         OIDC.debug(true, id_token);
 
-        // setTimeout(function(){
-            $('#tokenClaims').html(tokenClaimsHTMLString);
-            $('#userInfoClaims').html(userInfoClaimsHTMLString);
-        // }, 1000);
+        $('#tokenClaims').html(tokenClaimsHTMLString);
+        $('#userInfoClaims').html(userInfoClaimsHTMLString);
     }
 });
