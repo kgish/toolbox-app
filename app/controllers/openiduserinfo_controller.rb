@@ -1,5 +1,4 @@
 class OpeniduserinfoController < ApplicationController
-  before_action :set_userinfo
   skip_before_action :authenticate_user!
 
   def userinfo
