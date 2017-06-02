@@ -5,7 +5,7 @@ class OpeniduserinfoController < ApplicationController
     json = userinfo_params
     if json
       # Do something
-      render json: json, status: :ok
+      render json: { userinfo: json }, status: :ok
     else
       render json: { error: { errors: ['Missing userinfo params'] } }, status: :unprocessable_entity
     end
