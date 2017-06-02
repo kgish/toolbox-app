@@ -14,7 +14,7 @@ class OpeniduserinfoController < ApplicationController
   private
 
   def userinfo_params
-    params.require(:userinfo).permit(:updated_at, :uid, :name, :given_name, :family_name, :email, :sub, :role, :o)
+    params.require(:userinfo).permit(:updated_at, :user_name, :user_role, :name, :given_name, :family_name, :email, :sub, :role, :o)
   end
 
 end
