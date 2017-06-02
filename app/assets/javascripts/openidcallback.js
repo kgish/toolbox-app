@@ -14,7 +14,7 @@ $(function() {
         $('#userInfoClaims').html(userInfoClaimsHTMLString);
 
         var url = '/openiduserinfo',
-            json = { userInfo: userInfoClaims };
+            json = { userinfo: userInfoClaims };
 
         $.post(url, json, function (data, status, jqxhr) {
             if (status === 'success') {

@@ -25,6 +25,9 @@ $(function() {
         });
         //console.log(JSON.stringify(loginRequest));
 
+        // Enable word wrap for long url.
+        loginRequest.url = loginRequest.url.replace(/([?&])/g, '<br/>$1');
+
         $('#clientInfo').html(JSONObjToHTMLTable(clientInfo));
         $('#loginRequest').html(JSONObjToHTMLTable(loginRequest));
 
