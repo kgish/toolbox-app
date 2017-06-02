@@ -25,6 +25,9 @@ class ApplicationController < ActionController::Base
     @app_name = global ? global.value : 'Participation-Tool'
     global = Global.find_by(key: 'annotator-store-url')
     @annotator_store_url = global ? global.value : 'http://localhost:3001'
+
+    gon.push(rails_env: Rails.env )
+
   end
 
 end

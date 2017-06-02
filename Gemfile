@@ -50,6 +50,9 @@ gem 'bootsy'
 # https://github.com/ifad/data-confirm-modal
 gem 'data-confirm-modal'
 
+# https://github.com/gazay/gon
+gem 'gon'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'

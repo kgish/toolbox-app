@@ -3,18 +3,28 @@ class OpeniduserinfoController < ApplicationController
 
   def userinfo
     json = userinfo_params
-    if json
-      # Do something
-      render json: { userinfo: json }, status: :ok
-    else
+
+    unless json
       render json: { error: { errors: ['Missing userinfo params'] } }, status: :unprocessable_entity
+    end
+
+    user = User.find_by(username: json[:username])
+
+    if user
+      sign_in(:user, user)
+      # user.update(
+      #   openid_sub: json[:sub],
+      #   openid_dt: DateTime.now
+      # )
+      render json: { userinfo: json }, status: :ok, location: user
+    else
+      render json: { userinfo: json }, status: :created, location: user
     end
   end
 
   private
 
   def userinfo_params
-    params.require(:userinfo).permit(:updated_at, :user_name, :user_role, :name, :given_name, :family_name, :email, :sub, :role, :o)
+    params.require(:userinfo).permit(:updated_at, :username, :name, :given_name, :family_name, :email, :sub, :role, :o)
   end
-
 end
