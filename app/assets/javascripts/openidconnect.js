@@ -21,7 +21,7 @@ $(function() {
         //console.log('sessionStorage=' + JSON.stringify(sessionStorage));
         //console.log('loginRequest');
         loginRequest = OIDC.generateLoginRequest({
-            scope: 'openid profile email',
+            scope: 'openid email',
             response_type: 'token id_token'
         });
         //console.log(JSON.stringify(loginRequest));
@@ -33,7 +33,7 @@ $(function() {
         $('#loginRequest').html(JSONObjToHTMLTable(loginRequest));
 
         $('#authenticate').click(function () {
-            OIDC.login({scope: 'openid profile email', response_type: 'token id_token'});
+            OIDC.login({scope: 'openid email', response_type: 'token id_token'});
         });
 
         var toggle = $('#toggle');
