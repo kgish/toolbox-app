@@ -21,7 +21,7 @@ $(function() {
         //console.log('loginRequest');
         loginRequest = OIDC.generateLoginRequest({
             scope: 'openid profile email',
-            response_type: 'token id_token code'
+            response_type: 'token id_token'
         });
         //console.log(JSON.stringify(loginRequest));
 
