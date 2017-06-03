@@ -1,7 +1,7 @@
 $(function() {
     if ($('.openidconnect').length) {
         var clientInfo = {
-            client_id : '@!C7CB.FC99.01D8.26E0!0001!CA90.BB7A!0008!3FCC.EFFA.33C0.A8EA',
+            client_id : '@!1CC2.141B.EF85.BF6A!0001!C152.7133!0008!BD95.BEAA.7ACA.ED65',
             redirect_uri: 'https://demo.participation.tools/openidcallback'
         };
 
@@ -21,7 +21,7 @@ $(function() {
         //console.log('loginRequest');
         loginRequest = OIDC.generateLoginRequest({
             scope: 'openid profile email',
-            response_type: 'token id_token'
+            response_type: 'token id_token code'
         });
         //console.log(JSON.stringify(loginRequest));
 
