@@ -2,6 +2,7 @@ $(function() {
     if ($('.openidconnect').length) {
         var clientInfo = {
             client_id : '@!1CC2.141B.EF85.BF6A!0001!C152.7133!0008!BD95.BEAA.7ACA.ED65',
+            client_secret: 'b47a9dff-d5af-46d2-a328-ce5d54807053',
             redirect_uri: 'https://demo.participation.tools/openidcallback'
         };
 
