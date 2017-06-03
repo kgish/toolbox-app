@@ -6,8 +6,8 @@ $(function() {
             redirect_uri: 'https://demo.participation.tools/openidcallback'
         },
         scope_and_response_type = {
-            scope: 'email openid profile',
-            response_type: 'token code id_token'
+            scope: 'openid email',
+            response_type: 'token id_token'
         };
 
         var providerInfo = OIDC.discover('https://sso.participation.tools');
