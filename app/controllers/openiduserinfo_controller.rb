@@ -12,10 +12,10 @@ class OpeniduserinfoController < ApplicationController
 
     if user
       sign_in(:user, user)
-      # user.update(
-      #   openid_sub: json[:sub],
-      #   openid_dt: DateTime.now
-      # )
+      user.update(
+        openid_sub: json[:sub],
+        openid_dt: DateTime.now
+      )
       render json: { userinfo: json }, status: :ok, location: user
     else
       render json: { userinfo: json }, status: :created, location: user
