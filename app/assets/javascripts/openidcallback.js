@@ -22,8 +22,6 @@ $(function() {
             } else {
                console.error('POST '+url+' => NOK (status='+jqxhr.status+', statusText='+jqxhr.statusText+', responseText='+jqxhr.responseText+')');
             }
-            // After (attempted) login go to the homepage.
-            // window.location.href = "/";
         });
     }
 });

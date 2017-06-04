@@ -8,7 +8,7 @@ class OpeniduserinfoController < ApplicationController
       render json: { error: { errors: ['Missing userinfo params'] } }, status: :unprocessable_entity
     end
 
-    user = User.find_by(username: json[:username])
+    user = User.find_by(email: json[:email])
 
     if user
       sign_in(:user, user)
