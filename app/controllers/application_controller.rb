@@ -26,7 +26,16 @@ class ApplicationController < ActionController::Base
     global = Global.find_by(key: 'annotator-store-url')
     @annotator_store_url = global ? global.value : 'http://localhost:3001'
 
-    gon.push(rails_env: Rails.env )
+    gon.push(
+      rails_env: Rails.env,
+      openid: {
+        client_id: ENV['OPENID_CLIENT_ID'],
+        client_secret: ENV['OPENID_CLIENT_SECRET'],
+        redirect_url: ENV['OPENID_REDIRECT_URL'],
+        scope: ENV['OPENID_SCOPE'],
+        response_type: ENV['OPENID_RESPONSE_TYPE']
+      }
+    )
 
   end
 

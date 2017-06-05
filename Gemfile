@@ -42,38 +42,32 @@ gem 'will_paginate-bootstrap'
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem 'faker'
-
-# https://github.com/volmer/bootsy
 gem 'bootsy'
-
-# https://github.com/ifad/data-confirm-modal
 gem 'data-confirm-modal'
-
-# https://github.com/gazay/gon
 gem 'gon'
+gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
-  gem 'pry-rails'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'byebug', platform: :mri
+  gem 'pry-rails'
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :development do
   gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
-  gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
-  gem 'capistrano-rake',    require: false
+  gem 'capistrano-rails',   require: false
   gem 'capistrano-rails-console', require: false
+  gem 'capistrano-rake',    require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano3-puma',   require: false
 end

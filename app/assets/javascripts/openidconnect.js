@@ -1,14 +1,14 @@
 $(function() {
     if ($('.openidconnect').length) {
         var clientInfo = {
-            client_id: '@!FDE5.5990.3FE6.E7A6!0001!8BC6.A3A2!0008!582C.BDE4.B8E3.CA35',
-            client_secret: '02c7f444-83e6-430b-9900-0545448296ad',
-            redirect_uri: 'https://demo.participation.tools/openidcallback'
+            client_id: gon.openid.client_id,
+            client_secret: gon.openid.client_secret,
+            redirect_uri: gon.openid.redirect_uri
         };
 
         var scope_and_response_type = {
-            scope: 'openid email permission profile',
-            response_type: 'token id_token'
+            scope: gon.openid.scope,
+            response_type: gon.openid.response_type
         };
 
         var providerInfo = OIDC.discover('https://sso.participation.tools');
