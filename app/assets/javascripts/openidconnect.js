@@ -6,25 +6,20 @@ $(function() {
             redirect_uri: 'https://demo.participation.tools/openidcallback'
         };
 
-        //console.log('providerInfo');
+        var scope_and_response_type = {
+            scope: 'openid email permission profile',
+            response_type: 'token id_token'
+        };
+
         var providerInfo = OIDC.discover('https://sso.participation.tools');
-        //console.log(JSON.stringify(providerInfo));
-        //console.log('setClientInfo');
         OIDC.setClientInfo(clientInfo);
-        //console.log('setProviderInfo');
         OIDC.setProviderInfo(providerInfo);
-        //console.log('storeInfo');
         OIDC.storeInfo(providerInfo, clientInfo);
+
         // Remove State and Nonce from previous session
         sessionStorage.removeItem('state');
         sessionStorage.removeItem('nonce');
-        //console.log('sessionStorage=' + JSON.stringify(sessionStorage));
-        //console.log('loginRequest');
-        loginRequest = OIDC.generateLoginRequest({
-            scope: 'openid email permission profile',
-            response_type: 'token id_token'
-        });
-        //console.log(JSON.stringify(loginRequest));
+        loginRequest = OIDC.generateLoginRequest(scope_and_response_type);
 
         // Enable word wrap for long url.
         loginRequest.url = loginRequest.url.replace(/([?&])/g, '<br/>$1');
@@ -33,7 +28,7 @@ $(function() {
         $('#loginRequest').html(JSONObjToHTMLTable(loginRequest));
 
         $('#authenticate').click(function () {
-            OIDC.login({scope: 'openid email permission profile', response_type: 'token id_token'});
+            OIDC.login(scope_and_response_type);
         });
 
         var toggle = $('#toggle');
