@@ -70,4 +70,5 @@ group :development do
   gem 'capistrano-rake',    require: false
   gem 'capistrano-rvm',     require: false
   gem 'capistrano3-puma',   require: false
+  gem 'capistrano-dotenv-tasks', require: false
 end
