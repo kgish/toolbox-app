@@ -1,6 +1,6 @@
 class PortalsController < ApplicationController
   before_action :set_tool, only: [:show]
-  before_filter :restrict_user_signed_in
+  before_action :restrict_user_signed_in
 
   def show
   end
