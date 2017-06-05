@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
       openid: {
         client_id: ENV['OPENID_CLIENT_ID'],
         client_secret: ENV['OPENID_CLIENT_SECRET'],
-        redirect_url: ENV['OPENID_REDIRECT_URL'],
+        redirect_uri: ENV['OPENID_REDIRECT_URI'],
         scope: ENV['OPENID_SCOPE'],
         response_type: ENV['OPENID_RESPONSE_TYPE']
       }
