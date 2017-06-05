@@ -1,8 +1,8 @@
 $(function() {
     if ($('.openidconnect').length) {
         var clientInfo = {
-            client_id: '@!FDE5.5990.3FE6.E7A6!0001!8BC6.A3A2!0008!0EBC.3A8D.EBD4.2C37',
-            client_secret: 'b63221fe-d417-4956-a6c5-3698b30be2bf',
+            client_id: '@!FDE5.5990.3FE6.E7A6!0001!8BC6.A3A2!0008!582C.BDE4.B8E3.CA35',
+            client_secret: '02c7f444-83e6-430b-9900-0545448296ad',
             redirect_uri: 'https://demo.participation.tools/openidcallback'
         };
 
