@@ -4,43 +4,45 @@
 
   <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
 
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Company</th>
-        <th class="textalign-center">Tools</th>
-        <th>Theme</th>
-        <th>Admin</th>
-        <th>Photo</th>
-        <th colspan="3" class="textalign-center"><%= link_to 'New User', new_user_path %></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @users.each do |user| %>
+  <div style="overflow-x:auto;">
+    <table class="table table-striped table-bordered table-responsive">
+      <thead>
         <tr>
-          <td><%= user.id %></td>
-          <td><%= user.firstname %> <%= user.lastname %></td>
-          <td><%= user.email %></td>
-          <td><%= user.company %></td>
-          <td class="textalign-center"><%= user.tools.count %></td>
-          <td><%= user.theme ? user.theme.name : 'None' %></td>
-          <td class="textalign-center"><%= fa_icon user.admin? ? 'check' : 'circle-o' %></td>
-          <td><%= image_tag user.photo.thumb.url %></td>
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td>
-            <% unless user.id == current_user.id || user.username == 'kiffin' %>
-              <%= link_to 'Delete', user, method: :delete, data: { title: 'WARNING', confirm: 'Are you sure you want to delete this user?' } %>
-            <% end %>
-          </td>
+          <th class="mobile-hide">Id</th>
+          <th>Name</th>
+          <th class="mobile-hide">Email</th>
+          <th>Company</th>
+          <th class="textalign-center">Tools</th>
+          <th>Theme</th>
+          <th>Admin</th>
+          <th class="mobile-hide">Photo</th>
+          <th colspan="3" class="textalign-center"><%= link_to 'New User', new_user_path %></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td class="mobile-hide"><%= user.id %></td>
+            <td><%= user.firstname %> <%= user.lastname %></td>
+            <td class="mobile-hide"><%= user.email %></td>
+            <td><%= user.company %></td>
+            <td class="textalign-center"><%= user.tools.count %></td>
+            <td><%= user.theme ? user.theme.name : 'None' %></td>
+            <td class="textalign-center"><%= fa_icon user.admin? ? 'check' : 'circle-o' %></td>
+            <td class="mobile-hide"><%= image_tag user.photo.thumb.url %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td>
+              <% unless user.id == current_user.id || user.username == 'kiffin' %>
+                <%= link_to 'Delete', user, method: :delete, data: { title: 'WARNING', confirm: 'Are you sure you want to delete this user?' } %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
   <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
 
